@@ -1,0 +1,113 @@
+# ==============================
+# Android Studio / IntelliJ
+# ==============================
+
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Android Studio user-specific files
+.idea/workspace.xml
+.idea/usage.statistics.xml
+.idea/dictionaries/
+.idea/shelf/
+
+# ==============================
+# Gradle
+# ==============================
+
+.gradle/
+build/
+**/build/
+
+# ==============================
+# Android Build Outputs
+# ==============================
+
+*.apk
+*.aab
+*.ap_
+*.dex
+*.output-metadata.json
+lint-results-*.xml
+
+# ==============================
+# Local configuration
+# ==============================
+
+local.properties
+
+# ==============================
+# Firebase / Google Services
+# ==============================
+
+# Keep Firebase configuration private
+google-services.json
+
+# ==============================
+# Signing / Keystore files
+# ==============================
+
+*.jks
+*.keystore
+*.p12
+*.pem
+
+# ==============================
+# Environment / Secret files
+# ==============================
+
+.env
+.env.*
+*.env
+
+# ==============================
+# Firebase / API credentials
+# ==============================
+
+secrets.properties
+secrets.xml
+
+# ==============================
+# Generated files
+# ==============================
+
+captures/
+.externalNativeBuild/
+.cxx/
+
+# ==============================
+# Kotlin
+# ==============================
+
+*.kotlin_module
+
+# ==============================
+# OS generated files
+# ==============================
+
+.DS_Store
+Thumbs.db
+
+# ==============================
+# Temporary files
+# ==============================
+
+*.tmp
+*.temp
+*.log
+
+# ==============================
+# VS Code
+# ==============================
+
+.vscode/
+
+# ==============================
+# Backup files
+# ==============================
+
+*.bak
+*.swp
+*~
