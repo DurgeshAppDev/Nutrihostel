@@ -16,7 +16,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -41,9 +40,9 @@ fun SplashScreen(
     }
 
     Box(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
-            .background(Color(0xFFF8F9FA)),
+            .background(MaterialTheme.colorScheme.background),
         contentAlignment = Alignment.Center
     ) {
         Column(
@@ -52,7 +51,7 @@ fun SplashScreen(
             Surface(
                 modifier = Modifier.size(120.dp),
                 shape = RoundedCornerShape(28.dp),
-                color = Color(0xFFEBF5EE), // Light green background for the logo container
+                color = MaterialTheme.colorScheme.surfaceVariant,
                 shadowElevation = 2.dp
             ) {
                 Box(
@@ -72,7 +71,7 @@ fun SplashScreen(
                 text = "NutriHostel",
                 style = MaterialTheme.typography.headlineMedium,
                 fontWeight = FontWeight.Bold,
-                color = Color(0xFF212121) // Dark grey/black for the title
+                color = MaterialTheme.colorScheme.onBackground
             )
 
             Spacer(modifier = Modifier.height(8.dp))
@@ -80,7 +79,7 @@ fun SplashScreen(
             Text(
                 text = "Smart Meal Planning & Nutrition",
                 style = MaterialTheme.typography.bodyLarge,
-                color = Color.Gray
+                color = MaterialTheme.colorScheme.onSurfaceVariant
             )
         }
     }
