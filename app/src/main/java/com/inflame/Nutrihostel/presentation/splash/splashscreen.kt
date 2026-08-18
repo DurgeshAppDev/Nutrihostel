@@ -16,33 +16,36 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.inflame.Nutrihostel.R
+import com.inflame.Nutrihostel.presentation.theme.NutriGreen
+import com.inflame.Nutrihostel.presentation.theme.NutriTextPrimary
 import kotlinx.coroutines.delay
 
 @Preview(showBackground = true)
 @Composable
 fun SplashScreenPreview() {
-    SplashScreen(onNavigateToNext = {})
+    Splash(onNavigateToNext = { })
 }
 
 @Composable
-fun SplashScreen(
+fun Splash(
     modifier: Modifier = Modifier,
     onNavigateToNext: () -> Unit
 ) {
     LaunchedEffect(key1 = true) {
-        delay(2000L)
+        delay(3000L)
         onNavigateToNext()
     }
 
     Box(
         modifier = modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background),
+            .background(Color.White),
         contentAlignment = Alignment.Center
     ) {
         Column(
@@ -51,7 +54,7 @@ fun SplashScreen(
             Surface(
                 modifier = Modifier.size(120.dp),
                 shape = RoundedCornerShape(28.dp),
-                color = MaterialTheme.colorScheme.surfaceVariant,
+                color = Color.White,
                 shadowElevation = 2.dp
             ) {
                 Box(
@@ -71,7 +74,7 @@ fun SplashScreen(
                 text = "NutriHostel",
                 style = MaterialTheme.typography.headlineMedium,
                 fontWeight = FontWeight.Bold,
-                color = MaterialTheme.colorScheme.onBackground
+                color = NutriGreen
             )
 
             Spacer(modifier = Modifier.height(8.dp))
@@ -79,7 +82,7 @@ fun SplashScreen(
             Text(
                 text = "Smart Meal Planning & Nutrition",
                 style = MaterialTheme.typography.bodyLarge,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
+                color = NutriTextPrimary
             )
         }
     }

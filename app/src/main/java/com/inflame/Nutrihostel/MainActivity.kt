@@ -4,8 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.*
-import com.inflame.Nutrihostel.presentation.role.RoleSelection
-import com.inflame.Nutrihostel.presentation.splash.SplashScreen
+import androidx.navigation.compose.rememberNavController
+import com.inflame.Nutrihostel.presentation.navigation.NutriHostelNavGraph
 import com.inflame.Nutrihostel.presentation.theme.NutriHostelTheme
 
 class MainActivity : ComponentActivity() {
@@ -15,18 +15,8 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             NutriHostelTheme {
-                var currentScreen by remember { mutableStateOf("splash") }
-
-                when (currentScreen) {
-                    "splash" -> {
-                        SplashScreen(onNavigateToNext = {
-                            currentScreen = "role_selection"
-                        })
-                    }
-                    "role_selection" -> {
-                        RoleSelection()
-                    }
-                }
+                val navController = rememberNavController()
+                NutriHostelNavGraph(navController = navController)
             }
         }
     }
