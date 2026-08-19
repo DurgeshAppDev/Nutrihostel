@@ -8,6 +8,8 @@ sealed interface Routes {
     data object Splash : Routes
 
     @Serializable
-    data object RoleSelection : Routes
+    data object LoginScreen : Routes
 
+    @Serializable
+    data object RegisterScreen
 }

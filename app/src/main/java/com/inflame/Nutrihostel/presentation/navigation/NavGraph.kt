@@ -6,7 +6,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.inflame.Nutrihostel.presentation.role.RoleSelection
+import com.inflame.Nutrihostel.presentation.Auth.LoginScreen
 import com.inflame.Nutrihostel.presentation.splash.Splash
 
 @Composable
@@ -23,7 +23,7 @@ fun NutriHostelNavGraph(
         composable<Routes.Splash> {
             Splash(
                 onNavigateToNext = {
-                    navController.navigate(Routes.RoleSelection) {
+                    navController.navigate(Routes.LoginScreen) {
                         popUpTo(Routes.Splash) {
                             inclusive = true
                         }
@@ -31,16 +31,16 @@ fun NutriHostelNavGraph(
                 }
             )
         }
+        composable<Routes.LoginScreen> {
+            LoginScreen(
 
-        composable<Routes.RoleSelection> {
-            RoleSelection(
-                onStudentClick = {
-                    Toast.makeText(context, "Student login clicked", Toast.LENGTH_SHORT).show()
-                },
-                onAdminClick = {
-                    Toast.makeText(context, "Admin login clicked", Toast.LENGTH_SHORT).show()
-                }
             )
         }
+
+//        composable<Routes.RegisterScreen> {
+//            RegisterScreen(
+//
+//            )
+//        }
     }
 }
