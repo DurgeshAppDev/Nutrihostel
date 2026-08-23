@@ -7,6 +7,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.inflame.Nutrihostel.presentation.Auth.LoginScreen
+import com.inflame.Nutrihostel.presentation.Auth.RegisterScreen
 import com.inflame.Nutrihostel.presentation.splash.Splash
 
 @Composable
@@ -14,7 +15,6 @@ fun NutriHostelNavGraph(
     navController: NavHostController
 ) {
     val context = LocalContext.current
-
     NavHost(
         navController = navController,
         startDestination = Routes.Splash
@@ -37,10 +37,10 @@ fun NutriHostelNavGraph(
             )
         }
 
-//        composable<Routes.RegisterScreen> {
-//            RegisterScreen(
-//
-//            )
-//        }
+        composable<Routes.RegisterScreen> {
+            RegisterScreen(
+
+            )
+        }
     }
 }

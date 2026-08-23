@@ -58,7 +58,7 @@ import com.inflame.Nutrihostel.presentation.theme.RoleStudentBg
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun LoginScreen() {
+fun LoginScreen(){
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var passwordVisible by remember { mutableStateOf(false) }
@@ -72,17 +72,18 @@ fun LoginScreen() {
                 )
             )
     ) {
-        // Back Button positioned at the top
         IconButton(
-            onClick = { /* TODO: Back Navigation */ },
+            onClick = {
+
+            },
             modifier = Modifier
                 .padding(16.dp)
                 .align(Alignment.TopStart)
         ) {
-            Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
+            Icon(Icons.AutoMirrored.Filled.ArrowBack,
+                contentDescription = "Back")
         }
 
-        // Centered Content
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -90,7 +91,6 @@ fun LoginScreen() {
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // Logo
             Box(
                 modifier = Modifier
                     .size(80.dp)
@@ -171,7 +171,7 @@ fun LoginScreen() {
                 color = NutriGreen,
                 modifier = Modifier
                     .align(Alignment.End)
-                    .clickable { /* TODO */ },
+                    .clickable {  },
                 style = MaterialTheme.typography.labelLarge
             )
 
