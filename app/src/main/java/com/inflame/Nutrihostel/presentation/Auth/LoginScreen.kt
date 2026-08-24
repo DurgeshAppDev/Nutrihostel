@@ -51,14 +51,14 @@ import com.inflame.Nutrihostel.R
 import com.inflame.Nutrihostel.presentation.theme.NutriBackground
 import com.inflame.Nutrihostel.presentation.theme.NutriDivider
 import com.inflame.Nutrihostel.presentation.theme.NutriGreen
+import com.inflame.Nutrihostel.presentation.theme.NutriHostelTheme
 import com.inflame.Nutrihostel.presentation.theme.NutriTextLight
 import com.inflame.Nutrihostel.presentation.theme.NutriTextPrimary
 import com.inflame.Nutrihostel.presentation.theme.NutriTextSecondary
 import com.inflame.Nutrihostel.presentation.theme.RoleStudentBg
 
-@Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun LoginScreen(){
+fun LoginScreen() {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var passwordVisible by remember { mutableStateOf(false) }
@@ -68,29 +68,36 @@ fun LoginScreen(){
             .fillMaxSize()
             .background(
                 Brush.verticalGradient(
-                    colors = listOf(RoleStudentBg, NutriBackground)
+                    colors = listOf(
+                        RoleStudentBg,
+                        NutriBackground
+                    )
                 )
             )
     ) {
+        // Back Button positioned at the top
         IconButton(
-            onClick = {
-
-            },
+            onClick = { /* TODO: Back Navigation */ },
             modifier = Modifier
                 .padding(16.dp)
                 .align(Alignment.TopStart)
         ) {
-            Icon(Icons.AutoMirrored.Filled.ArrowBack,
-                contentDescription = "Back")
+            Icon(
+                imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                contentDescription = "Back",
+                tint = NutriTextPrimary
+            )
         }
 
+        // Centered Content
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(24.dp),
+                .padding(horizontal = 24.dp),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            // Logo Icon Container
             Box(
                 modifier = Modifier
                     .size(80.dp)
@@ -134,7 +141,9 @@ fun LoginScreen(){
                 shape = RoundedCornerShape(24.dp),
                 colors = OutlinedTextFieldDefaults.colors(
                     focusedBorderColor = NutriGreen,
-                    unfocusedBorderColor = NutriDivider
+                    unfocusedBorderColor = NutriDivider,
+                    unfocusedContainerColor = Color.Transparent,
+                    focusedContainerColor = Color.Transparent
                 )
             )
 
@@ -160,7 +169,9 @@ fun LoginScreen(){
                 shape = RoundedCornerShape(24.dp),
                 colors = OutlinedTextFieldDefaults.colors(
                     focusedBorderColor = NutriGreen,
-                    unfocusedBorderColor = NutriDivider
+                    unfocusedBorderColor = NutriDivider,
+                    unfocusedContainerColor = Color.Transparent,
+                    focusedContainerColor = Color.Transparent
                 )
             )
 
@@ -171,7 +182,7 @@ fun LoginScreen(){
                 color = NutriGreen,
                 modifier = Modifier
                     .align(Alignment.End)
-                    .clickable {  },
+                    .clickable { /* TODO */ },
                 style = MaterialTheme.typography.labelLarge
             )
 
@@ -190,14 +201,69 @@ fun LoginScreen(){
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.Center
                 ) {
-                    Text("Sign In", color = Color.White, style = MaterialTheme.typography.titleMedium)
+                    Text(
+                        text = "Sign In",
+                        color = Color.White,
+                        style = MaterialTheme.typography.titleMedium
+                    )
                     Spacer(modifier = Modifier.width(8.dp))
-                    Icon(Icons.AutoMirrored.Filled.ArrowForward, contentDescription = null, tint = Color.White)
+                    Icon(
+                        imageVector = Icons.AutoMirrored.Filled.ArrowForward,
+                        contentDescription = null,
+                        tint = Color.White
+                    )
+                }
+            }
+
+            Spacer(modifier = Modifier.height(24.dp))
+
+            // OR CONTINUE WITH Divider
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                HorizontalDivider(modifier = Modifier.weight(1f), color = NutriDivider)
+                Text(
+                    text = "OR CONTINUE WITH",
+                    style = MaterialTheme.typography.labelMedium,
+                    color = NutriTextLight,
+                    modifier = Modifier.padding(horizontal = 12.dp)
+                )
+                HorizontalDivider(modifier = Modifier.weight(1f), color = NutriDivider)
+            }
+
+            Spacer(modifier = Modifier.height(24.dp))
+
+            // Google Button
+            OutlinedButton(
+                onClick = { /* TODO: Google Sign In */ },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(56.dp),
+                shape = RoundedCornerShape(28.dp),
+                border = BorderStroke(1.dp, NutriDivider),
+                colors = ButtonDefaults.outlinedButtonColors(contentColor = NutriTextPrimary)
+            ) {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.Center
+                ) {
+                    Icon(
+                        painter = painterResource(id = android.R.drawable.ic_dialog_info),
+                        contentDescription = null,
+                        tint = Color.Unspecified,
+                        modifier = Modifier.size(20.dp)
+                    )
+                    Spacer(modifier = Modifier.width(12.dp))
+                    Text(
+                        text = "Google",
+                        style = MaterialTheme.typography.titleMedium,
+                        fontWeight = FontWeight.Medium
+                    )
                 }
             }
 
             Spacer(modifier = Modifier.height(32.dp))
-
 
             // Footer
             Row(
@@ -217,5 +283,13 @@ fun LoginScreen(){
                 )
             }
         }
+    }
+}
+
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun LoginScreenPreview() {
+    NutriHostelTheme {
+        LoginScreen()
     }
 }

@@ -19,7 +19,7 @@ val NutriSurfaceBlue = Color(0xFFE8F1FD)
 val NutriSurfaceVariant = Color(0xFFF0F4EF)
 
 // Role Specific Colors (matching the image)
-val RoleStudentBg = Color(0xFFF1F8E9)
+val RoleStudentBg = Color(0xFFD7ECB8)
 val RoleAdminBg = Color(0xFFF9FBE7)
 val RoleAdminIconBg = Color(0xFFE0E0E0)
 
