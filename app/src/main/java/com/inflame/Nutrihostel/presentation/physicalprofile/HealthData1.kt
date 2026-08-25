@@ -51,12 +51,15 @@ import com.inflame.Nutrihostel.presentation.theme.RoleStudentBg
 @Composable
 fun HealthData1Preview() {
     NutriHostelTheme {
-        HealthData1()
+        HealthData1(onNextClick = {}, onBackClick = {})
     }
 }
 
 @Composable
-fun HealthData1() {
+fun HealthData1(
+    onNextClick: () -> Unit,
+    onBackClick: () -> Unit)
+{
     var selectedGender by remember { mutableStateOf("Female") }
     var age by remember { mutableStateOf("") }
     var height by remember { mutableStateOf("") }
@@ -242,7 +245,7 @@ fun HealthData1() {
                 horizontalArrangement = Arrangement.spacedBy(12.dp)
             ) {
                 Button(
-                    onClick = {  },
+                    onClick = { onBackClick()},
                     modifier = Modifier
                         .weight(0.4f)
                         .height(56.dp),
@@ -256,7 +259,7 @@ fun HealthData1() {
                 }
 
                 Button(
-                    onClick = {  },
+                    onClick = onNextClick,
                     modifier = Modifier
                         .weight(0.6f)
                         .height(56.dp),

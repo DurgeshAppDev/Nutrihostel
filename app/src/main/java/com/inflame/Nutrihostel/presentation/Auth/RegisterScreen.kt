@@ -49,7 +49,7 @@ import com.inflame.Nutrihostel.presentation.theme.RoleStudentBg
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun RegisterScreen() {
+fun RegisterScreen(onSignUpClick: () -> Unit) {
     var fullName by remember { mutableStateOf("")}
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
@@ -62,7 +62,7 @@ fun RegisterScreen() {
             .fillMaxSize()
             .background(
                 Brush.verticalGradient(
-                   colors = listOf(RoleStudentBg,NutriBackground)
+                    colors = listOf(RoleStudentBg, NutriBackground)
                 )
             )
     ){
@@ -174,7 +174,9 @@ fun RegisterScreen() {
             Spacer(modifier=Modifier.height(32.dp))
 
             Button(
-                onClick = { },
+                onClick = {
+                    onSignUpClick()
+                },
                 modifier= Modifier
                     .fillMaxWidth()
                     .height(56.dp),

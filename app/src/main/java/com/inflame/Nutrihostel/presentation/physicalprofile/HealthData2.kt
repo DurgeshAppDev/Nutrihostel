@@ -56,12 +56,14 @@ import com.inflame.Nutrihostel.presentation.theme.RoleStudentBg
 @Composable
 fun HealthData2Preview() {
     NutriHostelTheme {
-        HealthData2()
+        HealthData2(onBackClick = {})
     }
 }
 
 @Composable
-fun HealthData2() {
+fun HealthData2(
+    onBackClick: () -> Unit
+) {
     var selectedGoal by remember { mutableStateOf("Maintain") }
     var selectedDiet by remember { mutableStateOf("Vegetarian") }
     var allergies by remember { mutableStateOf("") }
@@ -245,7 +247,7 @@ fun HealthData2() {
                 horizontalArrangement = Arrangement.spacedBy(16.dp)
             ) {
                 Button(
-                    onClick = { },
+                    onClick = { onBackClick() },
                     modifier = Modifier
                         .weight(1f)
                         .height(56.dp),

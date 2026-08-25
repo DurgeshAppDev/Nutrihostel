@@ -57,8 +57,18 @@ import com.inflame.Nutrihostel.presentation.theme.NutriTextPrimary
 import com.inflame.Nutrihostel.presentation.theme.NutriTextSecondary
 import com.inflame.Nutrihostel.presentation.theme.RoleStudentBg
 
+@Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun LoginScreen() {
+fun LoginScreenPreview() {
+    NutriHostelTheme {
+        LoginScreen(
+            onRegisterClick = {}
+        )
+    }
+}
+
+@Composable
+fun LoginScreen(onRegisterClick: () -> Unit) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var passwordVisible by remember { mutableStateOf(false) }
@@ -77,7 +87,7 @@ fun LoginScreen() {
     ) {
         // Back Button positioned at the top
         IconButton(
-            onClick = { /* TODO: Back Navigation */ },
+            onClick = {  },
             modifier = Modifier
                 .padding(16.dp)
                 .align(Alignment.TopStart)
@@ -279,17 +289,10 @@ fun LoginScreen() {
                     text = "Create one",
                     style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold),
                     color = NutriGreen,
-                    modifier = Modifier.clickable { /* TODO: Navigate to Registration */ }
+                    modifier = Modifier.clickable { onRegisterClick() }
                 )
             }
         }
     }
 }
 
-@Preview(showBackground = true, showSystemUi = true)
-@Composable
-fun LoginScreenPreview() {
-    NutriHostelTheme {
-        LoginScreen()
-    }
-}

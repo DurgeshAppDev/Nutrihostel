@@ -11,5 +11,12 @@ sealed interface Routes {
     data object LoginScreen : Routes
 
     @Serializable
-    data object RegisterScreen
+    data object RegisterScreen : Routes
+
+    @Serializable
+    data object HealthData1: Routes
+
+    @Serializable
+    data object HealthData2 : Routes
+
 }
