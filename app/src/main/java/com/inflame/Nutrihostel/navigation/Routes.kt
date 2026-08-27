@@ -1,4 +1,4 @@
-package com.inflame.Nutrihostel.presentation.navigation
+package com.inflame.Nutrihostel.navigation
 
 import kotlinx.serialization.Serializable
 
@@ -18,5 +18,14 @@ sealed interface Routes {
 
     @Serializable
     data object HealthData2 : Routes
+
+    @Serializable
+    data object  HomeScreen: Routes
+
+    @Serializable
+    data object  ProfileScreen : Routes
+
+    @Serializable
+    data object  MealsScreen: Routes
 
 }

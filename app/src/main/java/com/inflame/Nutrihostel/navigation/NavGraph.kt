@@ -1,4 +1,4 @@
-package com.inflame.Nutrihostel.presentation.navigation
+package com.inflame.Nutrihostel.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
