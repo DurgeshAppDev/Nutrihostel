@@ -8,14 +8,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
 import com.inflame.Nutrihostel.navigation.BottomNavbar
 
-@Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun MealsScreen() {
+fun MealsScreen(navController: NavController) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
-        bottomBar = { BottomNavbar() }
+        bottomBar = { BottomNavbar(navController,"Meals") }
     ) { innerPadding ->
         Column(
             modifier = Modifier

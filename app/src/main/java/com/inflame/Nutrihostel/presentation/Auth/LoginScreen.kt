@@ -62,7 +62,7 @@ import com.inflame.Nutrihostel.presentation.theme.RoleStudentBg
 fun LoginScreenPreview() {
     NutriHostelTheme {
         LoginScreen(
-            onRegisterClick = {}
+            onRegisterClick = {},
         )
     }
 }
@@ -192,7 +192,7 @@ fun LoginScreen(onRegisterClick: () -> Unit) {
                 color = NutriGreen,
                 modifier = Modifier
                     .align(Alignment.End)
-                    .clickable { /* TODO */ },
+                    .clickable {},
                 style = MaterialTheme.typography.labelLarge
             )
 
@@ -200,7 +200,7 @@ fun LoginScreen(onRegisterClick: () -> Unit) {
 
             // Sign In Button
             Button(
-                onClick = { /* TODO: Login logic */ },
+                onClick = { },
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(56.dp),

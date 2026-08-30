@@ -11,10 +11,11 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.navigation.NavController
 
 
 @Composable
-fun BottomNavbar(){
+fun BottomNavbar(navController: NavController, key: String){
 
     val navItems = listOf(
         NavItem(
@@ -37,8 +38,16 @@ fun BottomNavbar(){
     NavigationBar {
         navItems.forEach { item ->
             NavigationBarItem(
-                selected = false,
-                onClick = {},
+                selected = item.title == key,
+                onClick = {
+                    navController.navigate(item.route) {
+                        popUpTo(navController.graph.startDestinationId) {
+                            saveState = true
+                        }
+                        launchSingleTop = true
+                        restoreState = true
+                    }
+                },
                 icon = {
                     Icon(
                         imageVector = item.icon,
