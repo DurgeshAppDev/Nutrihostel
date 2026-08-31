@@ -3,7 +3,7 @@ package com.inflame.Nutrihostel.presentation.theme
 import androidx.compose.ui.graphics.Color
 
 // Primary Brand Colors
-val NutriGreen = Color(0xFF4CAF50) // More vibrant green to match the image
+val NutriGreen = Color(0xFF88D089) // More vibrant green to match the image
 val NutriGreenLight = Color(0xFF81C784)
 val NutriGreenDark = Color(0xFF388E3C)
 
